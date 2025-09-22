@@ -1,0 +1,13 @@
+{
+  "periode_analyse": "2021-2025",
+  "total_accidents": 311029,
+  "total_morts": 26039,
+  "total_blesses": 355066,
+  "variation_accidents_2021_2025": -38.43,
+  "variation_morts_2021_2025": -38.88,
+  "etat_plus_accidents": "MG",
+  "etat_plus_dangereux": "PA",
+  "mois_plus_dangereux": "Août",
+  "cause_principale": "Reação tardia ou ineficiente do condutor",
+  "type_accident_frequent": "Colisão traseira"
+}

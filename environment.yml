@@ -1,0 +1,29 @@
+name: traffic-analysis
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - jupyterlab
+  - ipykernel
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - plotly
+  - scikit-learn
+  - scipy
+  - statsmodels
+  - pyarrow
+  - fastparquet
+  - geopandas
+  - shapely
+  - folium
+  - contextily
+  - geopy
+  - pyproj
+  - pip
+  - pip:
+      - streamlit
+      - streamlit-aggrid
+      - kaleido
