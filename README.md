@@ -149,17 +149,7 @@ Os arquivos CSV não são versionados por questões de:
 - Privacidade e proteção de dados
 - Performance do repositório
 
-## 🤝 Contribuição
 
-1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-analise`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova análise'`)
-4. Push para a branch (`git push origin feature/nova-analise`)
-5. Abra um Pull Request
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
 ## 👥 Autores
 
