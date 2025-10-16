@@ -70,12 +70,39 @@ Você precisa colocar os arquivos de dados na pasta `data/raw_data/`:
 
 ### 3. Executar a Análise
 
-#### Jupyter Notebook
+#### 🚀 Execução Automatizada (Recomendado)
+
+**Linux / Mac:**
+```bash
+./run_app.sh
+```
+
+**Windows PowerShell:**
+```powershell
+.\run_app.ps1
+```
+
+**Windows CMD:**
+```cmd
+run_app.bat
+```
+
+Os scripts automaticamente:
+- ✅ Verificam Python
+- ✅ Criam ambiente virtual
+- ✅ Instalam dependências
+- ✅ Iniciam aplicação Streamlit
+
+📖 **Para mais detalhes, veja:** [SCRIPTS_README.md](SCRIPTS_README.md)
+
+#### 📓 Execução Manual
+
+**Jupyter Notebook:**
 ```bash
 jupyter notebook notebooks/analyse_complete_2021_2025.ipynb
 ```
 
-#### Aplicação Streamlit
+**Aplicação Streamlit:**
 ```bash
 streamlit run streamlit_app_corrected.py
 ```
@@ -162,5 +189,3 @@ Os arquivos CSV não são versionados por questões de:
 - Projeto: [projeto_how_final](https://github.com/khkk24/projeto_how_final)
 
 ---
-
-⭐ Se este projeto foi útil para você, considere dar uma estrela!
