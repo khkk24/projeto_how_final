@@ -8,6 +8,8 @@ from .data_explorer import DataExplorer
 from .statistical_analyzer import StatisticalAnalyzer
 from .visualizer import Visualizer
 from .insight_generator import InsightGenerator
+from .ml_classifier import AccidentSeverityClassifier
+from .ml_visualizer import MLVisualizer
 
 __all__ = [
     "DataLoader",
@@ -16,4 +18,6 @@ __all__ = [
     "StatisticalAnalyzer",
     "Visualizer",
     "InsightGenerator",
+    "AccidentSeverityClassifier",
+    "MLVisualizer",
 ]

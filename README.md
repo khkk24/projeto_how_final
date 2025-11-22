@@ -181,7 +181,7 @@ Os arquivos CSV não são versionados por questões de:
 ## 👥 Autores
 
 - **Kokouvi Hola Kanyi- Kodovi **
-- ** Mariano ** - 
+- ** Mariano Vunge** - 
 
 ## 📞 Contato
 
