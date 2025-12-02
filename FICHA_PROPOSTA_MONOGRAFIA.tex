@@ -1,0 +1,474 @@
+\documentclass[12pt,a4paper]{article}
+
+% Pacotes essenciais
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+% Configurações de página
+\geometry{
+    a4paper,
+    left=25mm,
+    right=25mm,
+    top=25mm,
+    bottom=25mm
+}
+
+% Configuração de hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Ficha de Proposta de Monografia},
+    pdfauthor={Kokouvi Hola Kanyi, Mariano Vunge},
+}
+
+% Configuração de cabeçalho e rodapé
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Ficha de Proposta de Monografia}
+\lhead{2025}
+\rfoot{\thepage}
+
+% Espaçamento entre linhas
+\renewcommand{\baselinestretch}{1.5}
+
+% Título das seções
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{blue!70!black}}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{blue!50!black}}{\thesubsection}{1em}{}
+
+\begin{document}
+
+% Página de título
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\LARGE\bfseries FICHA DE PROPOSTA DE MONOGRAFIA\par}
+    
+    \vspace{3cm}
+    
+    {\Huge\bfseries Análise e Predição de Gravidade de Acidentes de Trânsito nas Rodovias Federais Brasileiras: Uma Abordagem Baseada em Machine Learning\par}
+    
+    \vspace{3cm}
+    
+    {\Large\textbf{Estudantes:}\par}
+    {\large Kokouvi Hola Kanyi\par}
+    {\large Mariano Vunge\par}
+    
+    \vspace{2cm}
+    
+    {\Large\textbf{Possível Orientador:}\par}
+    {\LARGE\color{blue!70!black}\textbf{Prof. Anderson (ARA ANDERSON)}\par}
+    
+    \vfill
+    
+    {\large 23 de Novembro de 2025\par}
+    
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+% Identificação
+\section{IDENTIFICAÇÃO}
+
+\begin{description}[leftmargin=0pt, labelwidth=0pt, labelsep=0pt, itemsep=10pt]
+    \item[\textbf{TEMA PROPOSTO:}] 
+    
+    {\large Análise e Predição de Gravidade de Acidentes de Trânsito nas Rodovias Federais Brasileiras: Uma Abordagem Baseada em Machine Learning}
+    
+    \item[\textbf{ESTUDANTES:}]
+    \begin{itemize}
+        \item Kokouvi Hola Kanyi
+        \item Mariano Vunge
+    \end{itemize}
+    
+    \item[\textbf{POSSÍVEL ORIENTADOR:}]
+    
+    {\large\textbf{Prof. Anderson (ARA ANDERSON)}}
+    
+    \item[\textbf{INSTITUIÇÃO:}] [Nome da Instituição]
+    
+    \item[\textbf{CURSO:}] [Nome do Curso]
+    
+    \item[\textbf{DATA:}] 23 de Novembro de 2025
+\end{description}
+
+\section{RESUMO DO TEMA}
+
+Este trabalho propõe o desenvolvimento de um sistema de análise e predição de gravidade de acidentes de trânsito nas rodovias federais brasileiras, utilizando técnicas avançadas de Machine Learning aplicadas a dados da Polícia Rodoviária Federal (PRF) do período 2021-2025.
+
+\subsection{Objetivo Principal}
+
+Desenvolver modelos de classificação multiclasse capazes de prever a gravidade de acidentes (Sem Vítimas, Com Vítimas Feridas, Com Vítimas Fatais) com base em características observáveis do acidente, condições ambientais e dados geográficos.
+
+\subsection{Justificativa}
+
+Os acidentes de trânsito representam grave problema de saúde pública no Brasil. Um sistema preditivo pode:
+
+\begin{itemize}
+    \item Otimizar alocação de recursos de emergência
+    \item Subsidiar políticas públicas de segurança viária
+    \item Identificar trechos críticos para intervenções
+    \item Salvar vidas através de resposta mais adequada
+\end{itemize}
+
+\section{CARACTERIZAÇÃO DA PESQUISA}
+
+\begin{description}[leftmargin=0pt, labelwidth=0pt, labelsep=0pt, itemsep=8pt]
+    \item[\textbf{Tipo:}] Pesquisa Aplicada
+    \item[\textbf{Abordagem:}] Quantitativa
+    \item[\textbf{Natureza:}] Descritiva e Explicativa
+    \item[\textbf{Método:}] Experimental com Machine Learning
+\end{description}
+
+\section{DADOS E METODOLOGIA}
+
+\subsection{Base de Dados}
+
+\begin{itemize}
+    \item \textbf{Fonte:} Polícia Rodoviária Federal (PRF)
+    \item \textbf{Período:} 2021 - 2025
+    \item \textbf{Volume:} 311.029 registros de acidentes
+    \item \textbf{Mortes:} 26.039
+    \item \textbf{Feridos:} 355.066
+\end{itemize}
+
+\subsection{Técnicas Aplicadas}
+
+\begin{itemize}
+    \item Análise Exploratória de Dados (EDA)
+    \item Feature Engineering
+    \item Classificação Multiclasse
+    \item Random Forest
+    \item Gradient Boosting
+    \item Tratamento de Classes Desbalanceadas
+\end{itemize}
+
+\subsection{Ferramentas}
+
+\begin{itemize}
+    \item Python 3.12
+    \item scikit-learn (Machine Learning)
+    \item pandas (Manipulação de dados)
+    \item Streamlit (Interface web)
+    \item Jupyter Notebooks (Análise)
+\end{itemize}
+
+\section{RESULTADOS PRELIMINARES}
+
+O projeto já possui implementação funcional com resultados comprovados:
+
+\subsection{Performance do Modelo}
+
+\begin{itemize}
+    \item \textbf{Algoritmo Selecionado:} Gradient Boosting
+    \item \textbf{Acurácia Geral:} 78.31\%
+    \item \textbf{Features Utilizadas:} 19 (10 categóricas + 9 numéricas)
+\end{itemize}
+
+\subsection{Métricas por Classe}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Classe} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \midrule
+Com Vítimas Feridas & 79.8\% & 96.2\% & 87.2\% \\
+Sem Vítimas & 67.6\% & 25.1\% & 36.6\% \\
+Com Vítimas Fatais & 47.5\% & 14.1\% & 21.8\% \\ \bottomrule
+\end{tabular}
+\caption{Métricas de Performance do Modelo por Classe}
+\end{table}
+
+\subsection{Top 5 Features Mais Importantes}
+
+\begin{enumerate}
+    \item Tipo do acidente (19.7\%)
+    \item Quilômetro da rodovia (16.1\%)
+    \item Causa do acidente (10.9\%)
+    \item Hora do dia (7.1\%)
+    \item Estado (UF) (6.6\%)
+\end{enumerate}
+
+\subsection{Descobertas da Análise Exploratória}
+
+\begin{itemize}
+    \item Redução de 38.4\% nos acidentes (2021-2025)
+    \item Agosto é o mês mais crítico
+    \item 18h é o horário com mais acidentes
+    \item Sexta-feira é o dia mais perigoso
+    \item Minas Gerais lidera em número de acidentes
+    \item Pará tem maior taxa de mortalidade (53.86\%)
+\end{itemize}
+
+\section{CONTRIBUIÇÕES ESPERADAS}
+
+\subsection{Científicas}
+
+\begin{itemize}
+    \item Aplicação de ML em problema real de segurança pública
+    \item Metodologia de feature engineering para dados de acidentes
+    \item Análise comparativa de algoritmos de classificação
+    \item Estudo de técnicas para lidar com dados desbalanceados
+\end{itemize}
+
+\subsection{Práticas}
+
+\begin{itemize}
+    \item Sistema funcional para predição de gravidade
+    \item Interface web interativa para visualização
+    \item Insights acionáveis para políticas públicas
+    \item Ferramenta para otimização de recursos de emergência
+\end{itemize}
+
+\subsection{Técnicas}
+
+\begin{itemize}
+    \item Código modular e bem documentado
+    \item Pipeline reproduzível de Ciência de Dados
+    \item Arquitetura escalável
+    \item Boas práticas de desenvolvimento
+\end{itemize}
+
+\section{ESTRUTURA DA MONOGRAFIA}
+
+\begin{enumerate}
+    \item \textbf{Introdução} - Contextualização e objetivos
+    \item \textbf{Fundamentação Teórica} - Segurança viária, ML, trabalhos relacionados
+    \item \textbf{Metodologia} - Dados, preprocessamento, algoritmos, métricas
+    \item \textbf{Desenvolvimento} - Arquitetura, implementação, otimização
+    \item \textbf{Resultados e Discussão} - Análise exploratória, performance, aplicabilidade
+    \item \textbf{Conclusão} - Síntese, contribuições, trabalhos futuros
+\end{enumerate}
+
+\section{CRONOGRAMA ESTIMADO}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}llp{7cm}@{}}
+\toprule
+\textbf{Fase} & \textbf{Duração} & \textbf{Atividades} \\ \midrule
+Revisão Bibliográfica & 4 semanas & Levantamento teórico, trabalhos relacionados \\
+Desenvolvimento Técnico & 6 semanas & Refinamento, otimização, novos experimentos \\
+Redação & 6 semanas & Escrita dos capítulos, documentação \\
+Revisão e Finalização & 2 semanas & Ajustes, formatação ABNT, apresentação \\ \bottomrule
+\end{tabular}
+\caption{Cronograma Estimado do Projeto}
+\end{table}
+
+\textbf{Total:} 18 semanas (aproximadamente 4.5 meses)
+
+\section{VIABILIDADE}
+
+\subsection{Pontos Favoráveis}
+
+\begin{itemize}
+    \item[\checkmark] Dados públicos e acessíveis (PRF)
+    \item[\checkmark] Implementação já funcional com resultados
+    \item[\checkmark] Tecnologias open-source consolidadas
+    \item[\checkmark] Escopo bem definido e realista
+    \item[\checkmark] Relevância social comprovada
+    \item[\checkmark] Aplicabilidade prática evidente
+\end{itemize}
+
+\subsection{Recursos Necessários}
+
+\begin{itemize}
+    \item Computador pessoal (não requer GPU)
+    \item Software livre (Python e bibliotecas)
+    \item Acesso à literatura acadêmica
+    \item Tempo dedicado ao desenvolvimento
+\end{itemize}
+
+\section{RELEVÂNCIA DO TEMA}
+
+\subsection{Social}
+
+\begin{itemize}
+    \item Acidentes de trânsito: 1.35 milhão de mortes/ano no mundo (OMS)
+    \item Brasil: milhares de vidas perdidas anualmente
+    \item Impacto econômico significativo
+    \item Problema de saúde pública grave
+\end{itemize}
+
+\subsection{Acadêmica}
+
+\begin{itemize}
+    \item Integração de teoria e prática
+    \item Aplicação de técnicas modernas de ML
+    \item Contribuição para literatura científica
+    \item Exemplo de pesquisa aplicada
+\end{itemize}
+
+\subsection{Profissional}
+
+\begin{itemize}
+    \item Desenvolvimento de habilidades em Ciência de Dados
+    \item Experiência com projetos completos (end-to-end)
+    \item Portfólio técnico robusto
+    \item Preparação para mercado de trabalho
+\end{itemize}
+
+\section{DIFERENCIAIS DO PROJETO}
+
+\begin{enumerate}
+    \item \textbf{Abordagem Dual}: Análise exploratória + Predição (não apenas um)
+    \item \textbf{Dados Reais}: 311k registros oficiais da PRF
+    \item \textbf{Sistema Completo}: Análise, modelo, interface, documentação
+    \item \textbf{Código Modular}: Arquitetura profissional e escalável
+    \item \textbf{Resultados Comprovados}: Implementação já funcional
+    \item \textbf{Aplicabilidade}: Impacto potencial em políticas públicas
+\end{enumerate}
+
+\section{SOLICITAÇÃO DE ORIENTAÇÃO}
+
+Venho por meio deste documento solicitar formalmente a orientação do \textbf{Prof. Anderson (ARA ANDERSON)} para o desenvolvimento desta monografia.
+
+\subsection{Justificativa da Escolha}
+
+A escolha do Prof. Anderson como orientador se baseia em [mencionar razões específicas, como]:
+
+\begin{itemize}
+    \item Expertise em [área de especialização do professor]
+    \item Experiência com projetos de Machine Learning
+    \item Conhecimento em Ciência de Dados
+    \item Interesse em aplicações práticas de IA
+    \item [Outras razões relevantes]
+\end{itemize}
+
+\subsection{Expectativas}
+
+Com a orientação do Prof. Anderson, espero:
+
+\begin{itemize}
+    \item Aprofundar conhecimentos teóricos em Machine Learning
+    \item Refinar a metodologia científica da pesquisa
+    \item Melhorar a qualidade técnica da implementação
+    \item Desenvolver análise crítica aprofundada
+    \item Produzir trabalho acadêmico de alto nível
+\end{itemize}
+
+\section{MATERIAIS DISPONÍVEIS}
+
+O projeto já conta com:
+
+\begin{itemize}
+    \item[\checkmark] Repositório GitHub completo e organizado
+    \item[\checkmark] Código-fonte funcional (2000+ linhas)
+    \item[\checkmark] Notebooks Jupyter com análises
+    \item[\checkmark] Documentação técnica detalhada
+    \item[\checkmark] Interface web interativa (Streamlit)
+    \item[\checkmark] Modelo treinado e salvo
+    \item[\checkmark] Scripts de automação
+\end{itemize}
+
+\textbf{Repositório:} \url{https://github.com/khkk24/projeto_how_final}
+
+\section{REFERÊNCIAS PRINCIPAIS}
+
+\subsection{Livros}
+
+\begin{itemize}
+    \item GÉRON, A. \textit{Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow}. O'Reilly, 2022.
+    \item HASTIE, T.; TIBSHIRANI, R.; FRIEDMAN, J. \textit{The Elements of Statistical Learning}. Springer, 2009.
+\end{itemize}
+
+\subsection{Artigos}
+
+\begin{itemize}
+    \item SANTOS, K.; DIAS, J.; AMANCIO, D. A Review of Traffic Accident Prediction Models. \textit{Transportation Research Part C}, 2019.
+    \item SILVA, P. B. et al. Machine Learning for Traffic Accident Severity Classification. \textit{Expert Systems with Applications}, 2022.
+\end{itemize}
+
+\subsection{Dados}
+
+\begin{itemize}
+    \item POLÍCIA RODOVIÁRIA FEDERAL. Dados Abertos - Acidentes de Trânsito. 2025.
+    \item OMS. Global Status Report on Road Safety. 2023.
+\end{itemize}
+
+\section{DECLARAÇÃO}
+
+Declaro que o tema proposto é de meu interesse acadêmico e profissional, e comprometo-me a desenvolver o trabalho com dedicação, seguindo as orientações do professor orientador e as normas acadêmicas da instituição.
+
+Estou ciente de que a monografia deverá ser desenvolvida no período de [X] meses, com defesa prevista para [data aproximada].
+
+\vspace{2cm}
+
+\noindent\textbf{Data:} 23 de Novembro de 2025
+
+\vspace{1.5cm}
+
+\noindent\textbf{Estudantes:}
+
+\vspace{1cm}
+
+\noindent\rule{7cm}{0.4pt}
+
+\noindent Kokouvi Hola Kanyi
+
+\vspace{1cm}
+
+\noindent\rule{7cm}{0.4pt}
+
+\noindent Mariano Vunge
+
+\vspace{2cm}
+
+\noindent\textbf{Possível Orientador:}
+
+\vspace{1cm}
+
+\noindent\rule{7cm}{0.4pt}
+
+\noindent Prof. Anderson (ARA ANDERSON)
+
+\section{ANEXOS}
+
+\begin{itemize}
+    \item Anexo A: Estrutura do repositório GitHub
+    \item Anexo B: Exemplos de visualizações geradas
+    \item Anexo C: Prints dos notebooks com resultados
+    \item Anexo D: Documentação técnica completa (ML\_README.md)
+    \item Anexo E: Guia de apresentação técnica
+\end{itemize}
+
+\section{OBSERVAÇÃO IMPORTANTE}
+
+Este projeto não parte do zero. Já existe uma implementação funcional com resultados comprovados. O período da monografia seria dedicado a:
+
+\begin{enumerate}
+    \item Aprofundamento teórico e revisão bibliográfica
+    \item Refinamento técnico e experimentação de melhorias
+    \item Análise crítica aprofundada dos resultados
+    \item Documentação acadêmica formal
+    \item Redação científica estruturada
+\end{enumerate}
+
+Isso torna o projeto altamente viável e com grande potencial de resultar em uma monografia de qualidade.
+
+\vspace{1cm}
+
+\section{CONTATO}
+
+\begin{itemize}
+    \item Email: [seu email]
+    \item GitHub: \url{https://github.com/khkk24}
+    \item Telefone: [seu telefone]
+\end{itemize}
+
+\end{document}

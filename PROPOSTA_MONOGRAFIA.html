@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Kokouvi Hola Kanyi e Mariano Vunge" />
+  <title>Proposta de Monografia: Análise e Predição de Gravidade de Acidentes de Trânsito nas Rodovias Federais Brasileiras - Uma Abordagem Baseada em Machine Learning</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Proposta de Monografia: Análise e Predição de
+Gravidade de Acidentes de Trânsito nas Rodovias Federais Brasileiras -
+Uma Abordagem Baseada em Machine Learning</h1>
+<p class="author">Kokouvi Hola Kanyi e Mariano Vunge</p>
+<p class="date">23 de Novembro de 2025</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#proposta-de-monografia"
+id="toc-proposta-de-monografia">PROPOSTA DE MONOGRAFIA</a>
+<ul>
+<li><a
+href="#análise-e-predição-de-gravidade-de-acidentes-de-trânsito-nas-rodovias-federais-brasileiras-uma-abordagem-baseada-em-machine-learning"
+id="toc-análise-e-predição-de-gravidade-de-acidentes-de-trânsito-nas-rodovias-federais-brasileiras-uma-abordagem-baseada-em-machine-learning">ANÁLISE
+E PREDIÇÃO DE GRAVIDADE DE ACIDENTES DE TRÂNSITO NAS RODOVIAS FEDERAIS
+BRASILEIRAS: UMA ABORDAGEM BASEADA EM MACHINE LEARNING</a></li>
+<li><a href="#dados-de-identificação" id="toc-dados-de-identificação">1.
+DADOS DE IDENTIFICAÇÃO</a></li>
+<li><a href="#tema-proposto" id="toc-tema-proposto">2. TEMA
+PROPOSTO</a></li>
+<li><a href="#tema" id="toc-tema">1. TEMA</a>
+<ul>
+<li><a href="#delimitação-do-tema" id="toc-delimitação-do-tema">1.1
+Delimitação do Tema</a></li>
+<li><a href="#justificativa-da-escolha"
+id="toc-justificativa-da-escolha">1.2 Justificativa da Escolha</a></li>
+</ul></li>
+<li><a href="#problema-de-pesquisa" id="toc-problema-de-pesquisa">2.
+PROBLEMA DE PESQUISA</a>
+<ul>
+<li><a href="#contextualização" id="toc-contextualização">2.1
+Contextualização</a></li>
+<li><a href="#questão-problema-principal"
+id="toc-questão-problema-principal">2.2 Questão Problema
+Principal</a></li>
+<li><a href="#questões-secundárias" id="toc-questões-secundárias">2.3
+Questões Secundárias</a></li>
+<li><a href="#hipóteses" id="toc-hipóteses">2.4 Hipóteses</a></li>
+</ul></li>
+<li><a href="#objetivos" id="toc-objetivos">3. OBJETIVOS</a>
+<ul>
+<li><a href="#objetivo-geral" id="toc-objetivo-geral">3.1 Objetivo
+Geral</a></li>
+<li><a href="#objetivos-específicos" id="toc-objetivos-específicos">3.2
+Objetivos Específicos</a></li>
+</ul></li>
+<li><a href="#justificativa" id="toc-justificativa">4. JUSTIFICATIVA</a>
+<ul>
+<li><a href="#relevância-científica" id="toc-relevância-científica">4.1
+Relevância Científica</a></li>
+<li><a href="#relevância-social" id="toc-relevância-social">4.2
+Relevância Social</a></li>
+<li><a href="#relevância-tecnológica"
+id="toc-relevância-tecnológica">4.3 Relevância Tecnológica</a></li>
+<li><a href="#viabilidade" id="toc-viabilidade">4.4 Viabilidade</a></li>
+</ul></li>
+<li><a href="#fundamentação-teórica" id="toc-fundamentação-teórica">5.
+FUNDAMENTAÇÃO TEÓRICA</a>
+<ul>
+<li><a href="#áreas-de-conhecimento-envolvidas"
+id="toc-áreas-de-conhecimento-envolvidas">5.1 Áreas de Conhecimento
+Envolvidas</a></li>
+<li><a href="#conceitos-fundamentais"
+id="toc-conceitos-fundamentais">5.2 Conceitos Fundamentais</a></li>
+<li><a href="#estado-da-arte" id="toc-estado-da-arte">5.3 Estado da
+Arte</a></li>
+</ul></li>
+<li><a href="#metodologia" id="toc-metodologia">6. METODOLOGIA</a>
+<ul>
+<li><a href="#tipo-de-pesquisa" id="toc-tipo-de-pesquisa">6.1 Tipo de
+Pesquisa</a></li>
+<li><a href="#materiais-e-métodos" id="toc-materiais-e-métodos">6.2
+Materiais e Métodos</a></li>
+<li><a href="#métricas-de-avaliação" id="toc-métricas-de-avaliação">6.3
+Métricas de Avaliação</a></li>
+<li><a href="#critérios-de-sucesso" id="toc-critérios-de-sucesso">6.4
+Critérios de Sucesso</a></li>
+</ul></li>
+<li><a href="#resultados-esperados" id="toc-resultados-esperados">7.
+RESULTADOS ESPERADOS</a>
+<ul>
+<li><a href="#produtos-técnicos" id="toc-produtos-técnicos">7.1 Produtos
+Técnicos</a></li>
+<li><a href="#produtos-acadêmicos" id="toc-produtos-acadêmicos">7.2
+Produtos Acadêmicos</a></li>
+<li><a href="#descobertas-esperadas" id="toc-descobertas-esperadas">7.3
+Descobertas Esperadas</a></li>
+<li><a href="#impactos-esperados" id="toc-impactos-esperados">7.4
+Impactos Esperados</a></li>
+</ul></li>
+<li><a href="#cronograma" id="toc-cronograma">8. CRONOGRAMA</a>
+<ul>
+<li><a href="#distribuição-das-atividades-14-semanas"
+id="toc-distribuição-das-atividades-14-semanas">Distribuição das
+Atividades (14 semanas)</a></li>
+<li><a href="#cronograma-detalhado"
+id="toc-cronograma-detalhado">Cronograma Detalhado</a></li>
+<li><a href="#marcos-milestones" id="toc-marcos-milestones">Marcos
+(Milestones)</a></li>
+</ul></li>
+<li><a href="#estrutura-prevista-da-monografia"
+id="toc-estrutura-prevista-da-monografia">9. ESTRUTURA PREVISTA DA
+MONOGRAFIA</a>
+<ul>
+<li><a href="#sumário-preliminar-60-80-páginas"
+id="toc-sumário-preliminar-60-80-páginas">Sumário Preliminar (60-80
+páginas)</a></li>
+</ul></li>
+<li><a href="#recursos-necessários" id="toc-recursos-necessários">10.
+RECURSOS NECESSÁRIOS</a>
+<ul>
+<li><a href="#recursos-humanos" id="toc-recursos-humanos">10.1 Recursos
+Humanos</a></li>
+<li><a href="#recursos-materiais" id="toc-recursos-materiais">10.2
+Recursos Materiais</a></li>
+<li><a href="#recursos-financeiros" id="toc-recursos-financeiros">10.3
+Recursos Financeiros</a></li>
+</ul></li>
+<li><a href="#riscos-e-mitigações" id="toc-riscos-e-mitigações">11.
+RISCOS E MITIGAÇÕES</a>
+<ul>
+<li><a href="#risco-1-indisponibilidade-de-dados"
+id="toc-risco-1-indisponibilidade-de-dados">Risco 1: Indisponibilidade
+de Dados</a></li>
+<li><a href="#risco-2-performance-insatisfatória-do-modelo"
+id="toc-risco-2-performance-insatisfatória-do-modelo">Risco 2:
+Performance Insatisfatória do Modelo</a></li>
+<li><a href="#risco-3-atraso-no-cronograma"
+id="toc-risco-3-atraso-no-cronograma">Risco 3: Atraso no
+Cronograma</a></li>
+<li><a href="#risco-4-problemas-técnicos-bugs-crashes"
+id="toc-risco-4-problemas-técnicos-bugs-crashes">Risco 4: Problemas
+Técnicos (bugs, crashes)</a></li>
+<li><a href="#risco-5-escopo-muito-amplo"
+id="toc-risco-5-escopo-muito-amplo">Risco 5: Escopo Muito Amplo</a></li>
+</ul></li>
+<li><a href="#contribuições-esperadas"
+id="toc-contribuições-esperadas">12. CONTRIBUIÇÕES ESPERADAS</a>
+<ul>
+<li><a href="#contribuição-científica"
+id="toc-contribuição-científica">12.1 Contribuição Científica</a></li>
+<li><a href="#contribuição-tecnológica"
+id="toc-contribuição-tecnológica">12.2 Contribuição Tecnológica</a></li>
+<li><a href="#contribuição-social" id="toc-contribuição-social">12.3
+Contribuição Social</a></li>
+<li><a href="#contribuição-acadêmica"
+id="toc-contribuição-acadêmica">12.4 Contribuição Acadêmica</a></li>
+</ul></li>
+<li><a href="#referências-iniciais" id="toc-referências-iniciais">13.
+REFERÊNCIAS INICIAIS</a>
+<ul>
+<li><a href="#livros" id="toc-livros">Livros</a></li>
+<li><a href="#artigos-científicos" id="toc-artigos-científicos">Artigos
+Científicos</a></li>
+<li><a href="#fontes-de-dados" id="toc-fontes-de-dados">Fontes de
+Dados</a></li>
+<li><a href="#documentação-técnica"
+id="toc-documentação-técnica">Documentação Técnica</a></li>
+</ul></li>
+<li><a href="#assinaturas" id="toc-assinaturas">14. ASSINATURAS</a>
+<ul>
+<li><a href="#autores" id="toc-autores">Autores</a></li>
+<li><a href="#orientador-proposto"
+id="toc-orientador-proposto">Orientador Proposto</a></li>
+</ul></li>
+<li><a href="#anexo-a-estrutura-do-repositório-github"
+id="toc-anexo-a-estrutura-do-repositório-github">ANEXO A: Estrutura do
+Repositório GitHub</a></li>
+<li><a href="#anexo-b-dados-estatísticos-do-projeto-situação-atual"
+id="toc-anexo-b-dados-estatísticos-do-projeto-situação-atual">ANEXO B:
+Dados Estatísticos do Projeto (Situação Atual)</a>
+<ul>
+<li><a href="#dataset" id="toc-dataset">Dataset</a></li>
+<li><a href="#modelo-atual" id="toc-modelo-atual">Modelo Atual</a></li>
+<li><a href="#performance-por-classe"
+id="toc-performance-por-classe">Performance por Classe</a></li>
+<li><a href="#top-5-features-mais-importantes"
+id="toc-top-5-features-mais-importantes">Top 5 Features Mais
+Importantes</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="proposta-de-monografia">PROPOSTA DE MONOGRAFIA</h1>
+<h2
+id="análise-e-predição-de-gravidade-de-acidentes-de-trânsito-nas-rodovias-federais-brasileiras-uma-abordagem-baseada-em-machine-learning">ANÁLISE
+E PREDIÇÃO DE GRAVIDADE DE ACIDENTES DE TRÂNSITO NAS RODOVIAS FEDERAIS
+BRASILEIRAS: UMA ABORDAGEM BASEADA EM MACHINE LEARNING</h2>
+<hr />
+<h2 id="dados-de-identificação">1. DADOS DE IDENTIFICAÇÃO</h2>
+<p><strong>Tema</strong>: Análise e Predição de Gravidade de Acidentes
+de Trânsito nas Rodovias Federais Brasileiras utilizando Machine
+Learning</p>
+<p><strong>Estudantes</strong>: - Kokouvi Hola Kanyi - Mariano Vunge</p>
+<p><strong>Possível Orientador</strong>: <strong>Prof. Anderson (ARA
+ANDERSON)</strong></p>
+<p><strong>Curso</strong>: [Seu curso - Ex: Ciência da Computação /
+Engenharia de Software / Sistemas de Informação]</p>
+<p><strong>Instituição</strong>: [Nome da instituição]</p>
+<p><strong>Área de Conhecimento</strong>: Ciência de Dados, Inteligência
+Artificial, Machine Learning Aplicado</p>
+<p><strong>Linha de Pesquisa</strong>: Aplicações de Machine Learning
+para Problemas Sociais e Segurança Viária</p>
+<p><strong>Data da Proposta</strong>: 23 de Novembro de 2025</p>
+<hr />
+<h2 id="tema-proposto">2. TEMA PROPOSTO</h2>
+<p><strong>Título</strong>: Análise Preditiva de Acidentes de Trânsito
+nas Rodovias Federais Brasileiras Utilizando Machine Learning</p>
+<p><strong>Autores</strong>: - Kokouvi Hola Kanyi - Mariano Vunge</p>
+<p><strong>Orientador Proposto</strong>: Prof. Anderson (ARA
+ANDERSON)</p>
+<p><strong>Área de Conhecimento</strong>: Ciência de Dados e
+Inteligência Artificial</p>
+<p><strong>Linha de Pesquisa</strong>: Aprendizado de Máquina Aplicado à
+Segurança Viária</p>
+<p><strong>Instituição</strong>: [Nome da Instituição]</p>
+<p><strong>Data</strong>: Novembro de 2025</p>
+<hr />
+<h2 id="tema">1. TEMA</h2>
+<h3 id="delimitação-do-tema">1.1 Delimitação do Tema</h3>
+<p>Desenvolvimento de um sistema inteligente de análise e predição de
+gravidade de acidentes de trânsito nas rodovias federais brasileiras,
+utilizando técnicas de ciência de dados e algoritmos de machine
+learning, baseado em dados históricos da Polícia Rodoviária Federal
+(PRF) do período de 2021 a 2025.</p>
+<h3 id="justificativa-da-escolha">1.2 Justificativa da Escolha</h3>
+<p>A segurança no trânsito é um problema crítico de saúde pública no
+Brasil. Segundo dados da PRF, milhares de vidas são perdidas anualmente
+em acidentes nas rodovias federais. Este projeto propõe uma abordagem
+inovadora que combina:</p>
+<ul>
+<li><strong>Análise Exploratória de Dados</strong>: Para identificar
+padrões, tendências e fatores de risco</li>
+<li><strong>Machine Learning</strong>: Para prever a gravidade dos
+acidentes antes da chegada do socorro</li>
+<li><strong>Aplicação Prática</strong>: Com potencial de impacto direto
+na alocação de recursos de emergência</li>
+</ul>
+<p>A relevância deste tema se justifica por:</p>
+<ol type="1">
+<li><strong>Impacto Social</strong>: Contribui diretamente para salvar
+vidas através de resposta mais eficiente a emergências</li>
+<li><strong>Inovação Tecnológica</strong>: Aplica técnicas modernas de
+IA a um problema real e urgente</li>
+<li><strong>Viabilidade</strong>: Utiliza dados públicos disponíveis e
+tecnologias consolidadas</li>
+<li><strong>Originalidade</strong>: Combina análise descritiva com
+capacidade preditiva em um único sistema integrado</li>
+</ol>
+<hr />
+<h2 id="problema-de-pesquisa">2. PROBLEMA DE PESQUISA</h2>
+<h3 id="contextualização">2.1 Contextualização</h3>
+<p>Os acidentes de trânsito nas rodovias federais brasileiras
+representam um grave problema de saúde pública. Entre 2021 e 2025, foram
+registrados 311.029 acidentes, resultando em 26.039 mortes e 355.066
+feridos. A eficiência no atendimento às vítimas é crucial para reduzir a
+mortalidade, e para isso, é fundamental prever a gravidade do acidente
+no momento do acionamento.</p>
+<h3 id="questão-problema-principal">2.2 Questão Problema Principal</h3>
+<p><strong>“Como desenvolver um modelo preditivo capaz de classificar a
+gravidade de acidentes de trânsito em rodovias federais com base em
+características do acidente, condições ambientais e dados geográficos,
+visando otimizar a alocação de recursos de emergência?”</strong></p>
+<h3 id="questões-secundárias">2.3 Questões Secundárias</h3>
+<ol type="1">
+<li>Quais características (features) são mais relevantes para prever a
+gravidade de um acidente?</li>
+<li>Qual algoritmo de machine learning apresenta melhor desempenho para
+este problema de classificação multiclasse?</li>
+<li>Como lidar com o desbalanceamento de classes (acidentes fatais
+representam apenas 7% dos casos)?</li>
+<li>Quais padrões temporais e geográficos podem ser extraídos dos dados
+históricos?</li>
+<li>Como traduzir as predições do modelo em ações práticas para equipes
+de resgate?</li>
+</ol>
+<h3 id="hipóteses">2.4 Hipóteses</h3>
+<p><strong>H1</strong>: É possível prever a gravidade de acidentes de
+trânsito com acurácia superior a 75% utilizando dados disponíveis no
+momento do registro do acidente.</p>
+<p><strong>H2</strong>: Variáveis como tipo de acidente, localização
+(quilômetro), causa do acidente e horário são os principais preditores
+de gravidade.</p>
+<p><strong>H3</strong>: Modelos ensemble (Random Forest, Gradient
+Boosting) apresentam melhor desempenho que modelos lineares para este
+problema.</p>
+<p><strong>H4</strong>: Técnicas de balanceamento de classes (SMOTE,
+class weights) melhoram significativamente o recall para acidentes
+fatais.</p>
+<hr />
+<h2 id="objetivos">3. OBJETIVOS</h2>
+<h3 id="objetivo-geral">3.1 Objetivo Geral</h3>
+<p>Desenvolver e avaliar um sistema de análise e predição de gravidade
+de acidentes de trânsito nas rodovias federais brasileiras, utilizando
+técnicas de ciência de dados e machine learning, capaz de auxiliar na
+tomada de decisão para alocação eficiente de recursos de emergência.</p>
+<h3 id="objetivos-específicos">3.2 Objetivos Específicos</h3>
+<ol type="1">
+<li><strong>Análise Exploratória</strong>:
+<ul>
+<li>Realizar análise estatística descritiva dos dados de acidentes
+(2021-2025)</li>
+<li>Identificar padrões temporais (horário, dia da semana, mês,
+ano)</li>
+<li>Mapear distribuição geográfica e identificar pontos críticos</li>
+<li>Analisar causas mais frequentes e sua relação com gravidade</li>
+</ul></li>
+<li><strong>Engenharia de Dados</strong>:
+<ul>
+<li>Implementar pipeline de limpeza e padronização de dados</li>
+<li>Criar features derivadas (período do dia, fim de semana, etc.)</li>
+<li>Tratar valores ausentes e outliers</li>
+<li>Realizar encoding de variáveis categóricas</li>
+</ul></li>
+<li><strong>Modelagem Preditiva</strong>:
+<ul>
+<li>Implementar e comparar múltiplos algoritmos de classificação</li>
+<li>Otimizar hiperparâmetros dos modelos</li>
+<li>Aplicar técnicas de balanceamento de classes</li>
+<li>Avaliar modelos usando métricas apropriadas (accuracy, precision,
+recall, F1-score)</li>
+</ul></li>
+<li><strong>Validação e Interpretabilidade</strong>:
+<ul>
+<li>Realizar validação cruzada dos modelos</li>
+<li>Analisar importância das features</li>
+<li>Interpretar erros e casos extremos</li>
+<li>Documentar limitações e vieses do modelo</li>
+</ul></li>
+<li><strong>Desenvolvimento de Interface</strong>:
+<ul>
+<li>Criar aplicação web interativa para visualização de dados</li>
+<li>Implementar interface para predições em tempo real</li>
+<li>Disponibilizar dashboards para análise exploratória</li>
+</ul></li>
+<li><strong>Documentação e Reprodutibilidade</strong>:
+<ul>
+<li>Documentar todo o processo de desenvolvimento</li>
+<li>Criar guias de uso e instalação</li>
+<li>Disponibilizar código em repositório público</li>
+<li>Elaborar relatório técnico completo</li>
+</ul></li>
+</ol>
+<hr />
+<h2 id="justificativa">4. JUSTIFICATIVA</h2>
+<h3 id="relevância-científica">4.1 Relevância Científica</h3>
+<p>Este trabalho contribui para o campo da Ciência de Dados aplicada à
+segurança viária através de:</p>
+<ul>
+<li><strong>Aplicação Prática de Machine Learning</strong>: Demonstra
+como algoritmos de IA podem resolver problemas reais de classificação
+com dados desbalanceados</li>
+<li><strong>Metodologia Reproduzível</strong>: Estabelece pipeline
+completo desde coleta até deploy, servindo como referência</li>
+<li><strong>Análise Crítica</strong>: Não apenas apresenta resultados,
+mas analisa limitações e propõe melhorias</li>
+<li><strong>Integração de Técnicas</strong>: Combina análise estatística
+tradicional com métodos modernos de aprendizado de máquina</li>
+</ul>
+<h3 id="relevância-social">4.2 Relevância Social</h3>
+<p>O impacto social deste projeto é significativo:</p>
+<ul>
+<li><strong>Redução de Mortalidade</strong>: Previsões mais rápidas e
+precisas permitem resposta mais eficiente</li>
+<li><strong>Otimização de Recursos</strong>: Alocação inteligente de
+ambulâncias e equipes de resgate</li>
+<li><strong>Políticas Públicas</strong>: Dados e insights podem embasar
+decisões sobre investimentos em segurança viária</li>
+<li><strong>Prevenção</strong>: Identificação de padrões permite ações
+preventivas direcionadas</li>
+</ul>
+<h3 id="relevância-tecnológica">4.3 Relevância Tecnológica</h3>
+<p>Do ponto de vista tecnológico, o projeto:</p>
+<ul>
+<li><strong>Utiliza Stack Moderna</strong>: Python, scikit-learn,
+pandas, streamlit</li>
+<li><strong>Segue Boas Práticas</strong>: Código modular, versionamento,
+documentação</li>
+<li><strong>É Escalável</strong>: Arquitetura permite expansão e
+melhorias futuras</li>
+<li><strong>É Acessível</strong>: Usa tecnologias open-source e dados
+públicos</li>
+</ul>
+<h3 id="viabilidade">4.4 Viabilidade</h3>
+<p>O projeto é viável pois:</p>
+<ul>
+<li><strong>Dados Disponíveis</strong>: PRF disponibiliza dados abertos
+e atualizados</li>
+<li><strong>Tecnologia Acessível</strong>: Bibliotecas gratuitas e bem
+documentadas</li>
+<li><strong>Conhecimento Consolidado</strong>: Área com vasta literatura
+e casos de uso</li>
+<li><strong>Tempo Adequado</strong>: Escopo compatível com cronograma de
+monografia</li>
+<li><strong>Recursos Suficientes</strong>: Não requer hardware
+especializado</li>
+</ul>
+<hr />
+<h2 id="fundamentação-teórica">5. FUNDAMENTAÇÃO TEÓRICA</h2>
+<h3 id="áreas-de-conhecimento-envolvidas">5.1 Áreas de Conhecimento
+Envolvidas</h3>
+<h4 id="ciência-de-dados">5.1.1 Ciência de Dados</h4>
+<ul>
+<li>Análise Exploratória de Dados (EDA)</li>
+<li>Estatística Descritiva e Inferencial</li>
+<li>Visualização de Dados</li>
+<li>Pipeline de Dados (ETL)</li>
+</ul>
+<h4 id="machine-learning">5.1.2 Machine Learning</h4>
+<ul>
+<li>Aprendizado Supervisionado</li>
+<li>Classificação Multiclasse</li>
+<li>Ensemble Methods (Random Forest, Gradient Boosting)</li>
+<li>Validação de Modelos</li>
+<li>Feature Engineering</li>
+</ul>
+<h4 id="segurança-viária">5.1.3 Segurança Viária</h4>
+<ul>
+<li>Fatores de Risco em Acidentes de Trânsito</li>
+<li>Sistemas de Resposta a Emergências</li>
+<li>Análise de Causas de Acidentes</li>
+<li>Políticas Públicas de Segurança no Trânsito</li>
+</ul>
+<h3 id="conceitos-fundamentais">5.2 Conceitos Fundamentais</h3>
+<h4 id="classificação-multiclasse">5.2.1 Classificação Multiclasse</h4>
+<p>Problema de aprendizado supervisionado onde cada instância deve ser
+atribuída a uma dentre três ou mais classes. Neste projeto: -
+<strong>Classe 1</strong>: Sem Vítimas - <strong>Classe 2</strong>: Com
+Vítimas Feridas - <strong>Classe 3</strong>: Com Vítimas Fatais</p>
+<h4 id="desbalanceamento-de-classes">5.2.2 Desbalanceamento de
+Classes</h4>
+<p>Situação onde as classes não têm distribuição uniforme. No dataset do
+projeto: - Com Vítimas Feridas: 76% - Sem Vítimas: 17% - Com Vítimas
+Fatais: 7%</p>
+<p>Técnicas para lidar: - SMOTE (Synthetic Minority Over-sampling
+Technique) - Class Weights - Undersampling da classe majoritária -
+Métricas apropriadas (F1-Score, Recall)</p>
+<h4 id="random-forest">5.2.3 Random Forest</h4>
+<p>Algoritmo ensemble que constrói múltiplas árvores de decisão e
+combina suas predições: - Reduz overfitting através de bagging - Fornece
+importância de features - Robusto a outliers - Paralelizável</p>
+<h4 id="gradient-boosting">5.2.4 Gradient Boosting</h4>
+<p>Algoritmo ensemble que constrói modelos sequencialmente, cada um
+corrigindo erros do anterior: - Alta performance em dados tabulares -
+Ajusta learning rate para convergência - Requer tuning cuidadoso de
+hiperparâmetros - Mais lento que Random Forest</p>
+<h3 id="estado-da-arte">5.3 Estado da Arte</h3>
+<h4 id="trabalhos-relacionados">5.3.1 Trabalhos Relacionados</h4>
+<p>Estudos prévios sobre predição de gravidade de acidentes:</p>
+<ol type="1">
+<li><p><strong>Abellán et al. (2013)</strong>: Usaram árvores de decisão
+para prever gravidade de acidentes na Espanha, alcançando 71% de
+acurácia.</p></li>
+<li><p><strong>Kwon et al. (2015)</strong>: Aplicaram SVM e Random
+Forest em dados de acidentes na Coreia, com melhor resultado de 78%
+usando Random Forest.</p></li>
+<li><p><strong>Santos et al. (2019)</strong>: Analisaram dados
+brasileiros usando regressão logística, identificando hora do dia e tipo
+de via como principais fatores.</p></li>
+<li><p><strong>Chen &amp; Fan (2019)</strong>: Utilizaram Deep Learning
+(CNN) para prever gravidade com 82% de acurácia, mas com dataset muito
+maior.</p></li>
+</ol>
+<h4 id="lacunas-identificadas">5.3.2 Lacunas Identificadas</h4>
+<ul>
+<li>Poucos estudos focados especificamente em rodovias federais
+brasileiras</li>
+<li>Falta de sistemas integrados (análise + predição + interface)</li>
+<li>Necessidade de abordagens práticas para implantação</li>
+<li>Carência de análise de features específicas do contexto
+brasileiro</li>
+</ul>
+<h4 id="contribuição-deste-trabalho">5.3.3 Contribuição Deste
+Trabalho</h4>
+<ul>
+<li>Dataset brasileiro recente (2021-2025)</li>
+<li>Sistema completo end-to-end</li>
+<li>Código aberto e reproduzível</li>
+<li>Interface web para uso prático</li>
+<li>Análise crítica de limitações</li>
+</ul>
+<hr />
+<h2 id="metodologia">6. METODOLOGIA</h2>
+<h3 id="tipo-de-pesquisa">6.1 Tipo de Pesquisa</h3>
+<p><strong>Natureza</strong>: Aplicada - busca gerar conhecimento para
+aplicação prática</p>
+<p><strong>Abordagem</strong>: Quantitativa - utiliza técnicas
+estatísticas e algoritmos de ML</p>
+<p><strong>Objetivos</strong>: Explicativa - busca identificar fatores
+que influenciam gravidade</p>
+<p><strong>Procedimentos</strong>: Experimental - testa diferentes
+algoritmos e configurações</p>
+<h3 id="materiais-e-métodos">6.2 Materiais e Métodos</h3>
+<h4 id="dados">6.2.1 Dados</h4>
+<p><strong>Fonte</strong>: Dados Abertos da Polícia Rodoviária Federal
+(PRF)</p>
+<p><strong>Período</strong>: 2021 a 2025</p>
+<p><strong>Volume</strong>: 311.029 registros de acidentes</p>
+<p><strong>Formato</strong>: CSV (um arquivo por ano)</p>
+<p><strong>Variáveis</strong>: 38 colunas incluindo: - Temporais: data,
+horário, dia da semana - Geográficas: UF, BR, km, latitude, longitude -
+Descritivas: tipo de acidente, causa, condição meteorológica -
+Quantitativas: número de veículos, pessoas, vítimas - Target:
+classificação do acidente (gravidade)</p>
+<h4 id="ferramentas">6.2.2 Ferramentas</h4>
+<p><strong>Linguagem</strong>: Python 3.12</p>
+<p><strong>Bibliotecas Principais</strong>: - pandas (manipulação de
+dados) - numpy (computação numérica) - scikit-learn (machine learning) -
+matplotlib, seaborn, plotly (visualização) - streamlit (interface web) -
+jupyter (notebooks interativos)</p>
+<p><strong>Ambiente</strong>: Jupyter Notebooks + scripts Python</p>
+<p><strong>Versionamento</strong>: Git/GitHub</p>
+<p><strong>Hardware</strong>: Computador pessoal (não requer GPU)</p>
+<h4 id="pipeline-de-desenvolvimento">6.2.3 Pipeline de
+Desenvolvimento</h4>
+<p><strong>Fase 1: Exploração de Dados (2-3 semanas)</strong> 1.
+Carregamento e inspeção inicial 2. Análise de qualidade (valores
+ausentes, duplicatas) 3. Estatísticas descritivas 4. Visualizações
+exploratórias 5. Identificação de padrões</p>
+<p><strong>Fase 2: Preparação de Dados (1-2 semanas)</strong> 1. Limpeza
+e padronização 2. Tratamento de valores ausentes 3. Feature engineering
+4. Encoding de variáveis categóricas 5. Normalização/padronização</p>
+<p><strong>Fase 3: Modelagem (3-4 semanas)</strong> 1. Definição de
+baseline 2. Treinamento de múltiplos modelos 3. Validação cruzada 4.
+Otimização de hiperparâmetros 5. Análise de feature importance</p>
+<p><strong>Fase 4: Avaliação (1-2 semanas)</strong> 1. Métricas de
+performance 2. Matriz de confusão 3. Análise de erros 4. Testes
+estatísticos 5. Comparação com estado da arte</p>
+<p><strong>Fase 5: Implementação (2 semanas)</strong> 1. Scripts de
+automação 2. Interface web 3. Documentação 4. Testes de usabilidade</p>
+<p><strong>Fase 6: Documentação (2 semanas)</strong> 1. Relatório
+técnico 2. Artigo científico 3. Apresentação 4. README e guias</p>
+<h4 id="experimentos">6.2.4 Experimentos</h4>
+<p><strong>Experimento 1: Comparação de Algoritmos</strong> - Logistic
+Regression (baseline) - Decision Tree - Random Forest - Gradient
+Boosting - XGBoost (se tempo permitir)</p>
+<p>Métrica de comparação: F1-Score macro</p>
+<p><strong>Experimento 2: Feature Engineering</strong> - Modelo com
+features originais - Modelo com features derivadas - Modelo com seleção
+de features</p>
+<p>Métrica: Acurácia + interpretabilidade</p>
+<p><strong>Experimento 3: Balanceamento de Classes</strong> - Sem
+balanceamento - Com class weights - Com SMOTE - Com undersampling</p>
+<p>Métrica: Recall da classe minoritária (acidentes fatais)</p>
+<p><strong>Experimento 4: Otimização de Hiperparâmetros</strong> - Grid
+Search - Random Search - Análise de sensibilidade</p>
+<p>Métrica: F1-Score + tempo de treinamento</p>
+<h3 id="métricas-de-avaliação">6.3 Métricas de Avaliação</h3>
+<p><strong>Acurácia</strong>: Proporção de predições corretas <span
+class="math display">$$Accuracy = \frac{TP + TN}{TP + TN + FP +
+FN}$$</span></p>
+<p><strong>Precision</strong>: Proporção de predições positivas corretas
+<span class="math display">$$Precision = \frac{TP}{TP + FP}$$</span></p>
+<p><strong>Recall (Sensibilidade)</strong>: Proporção de positivos reais
+identificados <span class="math display">$$Recall = \frac{TP}{TP +
+FN}$$</span></p>
+<p><strong>F1-Score</strong>: Média harmônica de precision e recall
+<span class="math display">$$F1 = 2 \times \frac{Precision \times
+Recall}{Precision + Recall}$$</span></p>
+<p><strong>Matriz de Confusão</strong>: Visualização de acertos e erros
+por classe</p>
+<h3 id="critérios-de-sucesso">6.4 Critérios de Sucesso</h3>
+<p>O projeto será considerado bem-sucedido se:</p>
+<ol type="1">
+<li><strong>Performance</strong>: Acurácia ≥ 75% e F1-Score ≥ 70%</li>
+<li><strong>Recall para Fatais</strong>: Recall ≥ 30% para acidentes
+fatais</li>
+<li><strong>Reprodutibilidade</strong>: Pipeline completo documentado e
+executável</li>
+<li><strong>Interface</strong>: Aplicação web funcional e intuitiva</li>
+<li><strong>Documentação</strong>: Relatório completo e código
+comentado</li>
+<li><strong>Contribuição</strong>: Insights práticos para segurança
+viária</li>
+</ol>
+<hr />
+<h2 id="resultados-esperados">7. RESULTADOS ESPERADOS</h2>
+<h3 id="produtos-técnicos">7.1 Produtos Técnicos</h3>
+<ol type="1">
+<li><p><strong>Sistema de Análise</strong>: Software completo com
+módulos de:</p>
+<ul>
+<li>Carregamento de dados</li>
+<li>Limpeza e padronização</li>
+<li>Análise exploratória</li>
+<li>Modelagem preditiva</li>
+<li>Visualização</li>
+</ul></li>
+<li><p><strong>Modelo Treinado</strong>: Modelo de ML otimizado e
+validado para predição de gravidade</p></li>
+<li><p><strong>Interface Web</strong>: Aplicação Streamlit com:</p>
+<ul>
+<li>Dashboards interativos</li>
+<li>Upload de dados</li>
+<li>Predições em tempo real</li>
+<li>Visualizações dinâmicas</li>
+</ul></li>
+<li><p><strong>Repositório GitHub</strong>: Código-fonte versionado e
+documentado</p></li>
+<li><p><strong>Notebooks Jupyter</strong>:</p>
+<ul>
+<li>Análise exploratória completa</li>
+<li>Experimentos de modelagem</li>
+<li>Validação de resultados</li>
+</ul></li>
+</ol>
+<h3 id="produtos-acadêmicos">7.2 Produtos Acadêmicos</h3>
+<ol type="1">
+<li><p><strong>Monografia</strong>: Documento completo (60-80 páginas)
+contendo:</p>
+<ul>
+<li>Fundamentação teórica</li>
+<li>Metodologia detalhada</li>
+<li>Resultados e discussão</li>
+<li>Conclusões e trabalhos futuros</li>
+</ul></li>
+<li><p><strong>Artigo Científico</strong>: Paper resumido para submissão
+em conferência</p></li>
+<li><p><strong>Apresentação</strong>: Slides para defesa da
+monografia</p></li>
+<li><p><strong>Documentação Técnica</strong>:</p>
+<ul>
+<li>README completo</li>
+<li>Guias de instalação e uso</li>
+<li>Documentação de API</li>
+</ul></li>
+</ol>
+<h3 id="descobertas-esperadas">7.3 Descobertas Esperadas</h3>
+<ol type="1">
+<li><strong>Padrões Temporais</strong>:
+<ul>
+<li>Horários de maior risco</li>
+<li>Sazonalidade mensal</li>
+<li>Tendências ao longo dos anos</li>
+</ul></li>
+<li><strong>Fatores de Risco</strong>:
+<ul>
+<li>Principais causas de acidentes graves</li>
+<li>Condições meteorológicas mais perigosas</li>
+<li>Tipos de acidente mais letais</li>
+</ul></li>
+<li><strong>Hotspots Geográficos</strong>:
+<ul>
+<li>Estados e trechos mais críticos</li>
+<li>Correlação entre infraestrutura e gravidade</li>
+</ul></li>
+<li><strong>Features Mais Importantes</strong>:
+<ul>
+<li>Variáveis que melhor predizem gravidade</li>
+<li>Interações relevantes entre features</li>
+</ul></li>
+</ol>
+<h3 id="impactos-esperados">7.4 Impactos Esperados</h3>
+<p><strong>Científico</strong>: - Contribuição para literatura sobre ML
+aplicado à segurança viária - Metodologia reproduzível para problemas
+similares</p>
+<p><strong>Tecnológico</strong>: - Sistema funcional que pode ser
+adaptado por órgãos públicos - Base de código aberta para comunidade</p>
+<p><strong>Social</strong>: - Potencial de reduzir tempo de resposta a
+emergências - Subsídio para políticas públicas de segurança</p>
+<p><strong>Educacional</strong>: - Caso de estudo para ensino de ciência
+de dados - Exemplo de projeto end-to-end</p>
+<hr />
+<h2 id="cronograma">8. CRONOGRAMA</h2>
+<h3 id="distribuição-das-atividades-14-semanas">Distribuição das
+Atividades (14 semanas)</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 34%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Semana</th>
+<th>Atividade</th>
+<th>Entregáveis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1-2</td>
+<td>Revisão bibliográfica e refinamento da proposta</td>
+<td>Referências organizadas, proposta aprovada</td>
+</tr>
+<tr class="even">
+<td>3-4</td>
+<td>Coleta e exploração inicial dos dados</td>
+<td>Dataset carregado, análise preliminar</td>
+</tr>
+<tr class="odd">
+<td>5-6</td>
+<td>Análise exploratória aprofundada</td>
+<td>Notebook com EDA, visualizações</td>
+</tr>
+<tr class="even">
+<td>7-8</td>
+<td>Preparação de dados e feature engineering</td>
+<td>Pipeline de preprocessamento</td>
+</tr>
+<tr class="odd">
+<td>9-10</td>
+<td>Modelagem e experimentação</td>
+<td>Modelos treinados, resultados iniciais</td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td>Otimização e validação</td>
+<td>Modelo final, métricas consolidadas</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>Desenvolvimento de interface</td>
+<td>Aplicação Streamlit funcional</td>
+</tr>
+<tr class="even">
+<td>13</td>
+<td>Escrita da monografia</td>
+<td>Primeira versão do documento</td>
+</tr>
+<tr class="odd">
+<td>14</td>
+<td>Revisão, ajustes e preparação da defesa</td>
+<td>Monografia final, apresentação</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cronograma-detalhado">Cronograma Detalhado</h3>
+<p><strong>Mês 1 (Semanas 1-4)</strong> - Semana 1: Revisão
+bibliográfica - Semana 2: Refinamento da proposta e aprovação - Semana
+3: Configuração do ambiente, coleta de dados - Semana 4: Carregamento e
+inspeção inicial</p>
+<p><strong>Mês 2 (Semanas 5-8)</strong> - Semana 5: Análise exploratória
+de variáveis temporais - Semana 6: Análise exploratória de variáveis
+geográficas e causas - Semana 7: Limpeza de dados e tratamento de
+valores ausentes - Semana 8: Feature engineering e encoding</p>
+<p><strong>Mês 3 (Semanas 9-12)</strong> - Semana 9: Baseline e
+primeiros modelos - Semana 10: Experimentos de balanceamento - Semana
+11: Otimização de hiperparâmetros - Semana 12: Desenvolvimento da
+interface web</p>
+<p><strong>Mês 4 (Semanas 13-14)</strong> - Semana 13: Escrita da
+monografia - Semana 14: Revisão final e preparação da defesa</p>
+<h3 id="marcos-milestones">Marcos (Milestones)</h3>
+<ul>
+<li><strong>M1</strong> (Semana 2): Proposta aprovada</li>
+<li><strong>M2</strong> (Semana 4): Dados carregados e limpos</li>
+<li><strong>M3</strong> (Semana 8): Análise exploratória completa</li>
+<li><strong>M4</strong> (Semana 11): Modelo final treinado</li>
+<li><strong>M5</strong> (Semana 12): Interface web funcional</li>
+<li><strong>M6</strong> (Semana 14): Monografia entregue</li>
+</ul>
+<hr />
+<h2 id="estrutura-prevista-da-monografia">9. ESTRUTURA PREVISTA DA
+MONOGRAFIA</h2>
+<h3 id="sumário-preliminar-60-80-páginas">Sumário Preliminar (60-80
+páginas)</h3>
+<p><strong>ELEMENTOS PRÉ-TEXTUAIS</strong> - Capa - Folha de Rosto -
+Folha de Aprovação - Dedicatória (opcional) - Agradecimentos (opcional)
+- Resumo - Abstract - Lista de Figuras - Lista de Tabelas - Lista de
+Abreviaturas e Siglas - Sumário</p>
+<p><strong>1. INTRODUÇÃO</strong> (6-8 páginas) - 1.1 Contextualização -
+1.2 Problema de Pesquisa - 1.3 Objetivos (Geral e Específicos) - 1.4
+Justificativa - 1.5 Estrutura do Trabalho</p>
+<p><strong>2. FUNDAMENTAÇÃO TEÓRICA</strong> (12-15 páginas) - 2.1
+Segurança Viária no Brasil - 2.1.1 Estatísticas e Impacto Social - 2.1.2
+Sistemas de Resposta a Emergências - 2.2 Ciência de Dados - 2.2.1
+Análise Exploratória de Dados - 2.2.2 Preparação de Dados - 2.3 Machine
+Learning - 2.3.1 Aprendizado Supervisionado - 2.3.2 Classificação
+Multiclasse - 2.3.3 Algoritmos Ensemble - 2.4 Desbalanceamento de
+Classes - 2.4.1 Técnicas de Balanceamento - 2.4.2 Métricas Apropriadas -
+2.5 Trabalhos Relacionados - 2.5.1 Estado da Arte - 2.5.2 Lacunas
+Identificadas</p>
+<p><strong>3. METODOLOGIA</strong> (10-12 páginas) - 3.1 Caracterização
+da Pesquisa - 3.2 Materiais - 3.2.1 Dados - 3.2.2 Ferramentas e
+Tecnologias - 3.3 Métodos - 3.3.1 Pipeline de Desenvolvimento - 3.3.2
+Análise Exploratória - 3.3.3 Preparação de Dados - 3.3.4 Modelagem
+Preditiva - 3.3.5 Validação e Avaliação - 3.4 Experimentos
+Planejados</p>
+<p><strong>4. DESENVOLVIMENTO</strong> (15-20 páginas) - 4.1 Análise
+Exploratória de Dados - 4.1.1 Estatísticas Descritivas - 4.1.2 Análise
+Temporal - 4.1.3 Distribuição Geográfica - 4.1.4 Análise de Causas - 4.2
+Preparação de Dados - 4.2.1 Limpeza e Padronização - 4.2.2 Feature
+Engineering - 4.2.3 Transformações - 4.3 Modelagem Preditiva - 4.3.1
+Definição do Problema - 4.3.2 Seleção de Features - 4.3.3 Treinamento de
+Modelos - 4.3.4 Otimização - 4.4 Interface Web - 4.4.1 Arquitetura -
+4.4.2 Funcionalidades Implementadas</p>
+<p><strong>5. RESULTADOS E DISCUSSÃO</strong> (12-15 páginas) - 5.1
+Resultados da Análise Exploratória - 5.1.1 Padrões Identificados - 5.1.2
+Insights Estatísticos - 5.2 Resultados da Modelagem - 5.2.1 Performance
+dos Modelos - 5.2.2 Comparação de Algoritmos - 5.2.3 Feature Importance
+- 5.3 Análise Crítica - 5.3.1 Pontos Fortes - 5.3.2 Limitações - 5.3.3
+Desafios Superados - 5.4 Discussão - 5.4.1 Comparação com Literatura -
+5.4.2 Implicações Práticas - 5.4.3 Contribuições</p>
+<p><strong>6. CONCLUSÃO</strong> (4-5 páginas) - 6.1 Síntese dos
+Resultados - 6.2 Atendimento aos Objetivos - 6.3 Limitações do Estudo -
+6.4 Trabalhos Futuros - 6.5 Considerações Finais</p>
+<p><strong>REFERÊNCIAS</strong></p>
+<p><strong>APÊNDICES</strong> - Apêndice A: Código-Fonte Principal -
+Apêndice B: Configurações de Hiperparâmetros - Apêndice C: Tabelas
+Complementares</p>
+<p><strong>ANEXOS</strong> - Anexo A: Dicionário de Dados da PRF - Anexo
+B: Prints da Interface Web</p>
+<hr />
+<h2 id="recursos-necessários">10. RECURSOS NECESSÁRIOS</h2>
+<h3 id="recursos-humanos">10.1 Recursos Humanos</h3>
+<p><strong>Autor 1</strong>: Kokouvi Hola Kanyi - Responsabilidades:
+Desenvolvimento do sistema, modelagem ML, análise de dados</p>
+<p><strong>Autor 2</strong>: Mariano Vunge<br />
+- Responsabilidades: Documentação, interface web, revisão de código</p>
+<p><strong>Orientador</strong>: Prof. Anderson (ARA ANDERSON) -
+Responsabilidades: Orientação metodológica, revisão técnica, validação
+acadêmica</p>
+<h3 id="recursos-materiais">10.2 Recursos Materiais</h3>
+<p><strong>Hardware</strong>: - Computador pessoal com: - Processador:
+Intel i5 ou equivalente - RAM: 8GB mínimo - Disco: 20GB livres - Não
+requer GPU</p>
+<p><strong>Software</strong> (todos gratuitos): - Python 3.8+ - Jupyter
+Notebook - VS Code ou similar - Git - Navegador web</p>
+<p><strong>Dados</strong>: - Dados Abertos da PRF (gratuitos) -
+Disponíveis em: gov.br/prf</p>
+<h3 id="recursos-financeiros">10.3 Recursos Financeiros</h3>
+<p><strong>Não há custos previstos</strong>, pois: - Software: 100%
+open-source - Dados: Disponíveis gratuitamente - Hardware: Equipamento
+pessoal existente - Hospedagem: GitHub Pages (gratuito)</p>
+<hr />
+<h2 id="riscos-e-mitigações">11. RISCOS E MITIGAÇÕES</h2>
+<h3 id="risco-1-indisponibilidade-de-dados">Risco 1: Indisponibilidade
+de Dados</h3>
+<p><strong>Probabilidade</strong>: Baixa<br />
+<strong>Impacto</strong>: Alto<br />
+<strong>Mitigação</strong>: Fazer download e backup local de todos os
+dados no início do projeto</p>
+<h3 id="risco-2-performance-insatisfatória-do-modelo">Risco 2:
+Performance Insatisfatória do Modelo</h3>
+<p><strong>Probabilidade</strong>: Média<br />
+<strong>Impacto</strong>: Médio<br />
+<strong>Mitigação</strong>: Testar múltiplos algoritmos, aplicar feature
+engineering, ajustar expectativas</p>
+<h3 id="risco-3-atraso-no-cronograma">Risco 3: Atraso no Cronograma</h3>
+<p><strong>Probabilidade</strong>: Média<br />
+<strong>Impacto</strong>: Médio<br />
+<strong>Mitigação</strong>: Buffer de 2 semanas no planejamento,
+priorizar entregas críticas</p>
+<h3 id="risco-4-problemas-técnicos-bugs-crashes">Risco 4: Problemas
+Técnicos (bugs, crashes)</h3>
+<p><strong>Probabilidade</strong>: Média<br />
+<strong>Impacto</strong>: Baixo<br />
+<strong>Mitigação</strong>: Versionamento com Git, backups regulares,
+testes frequentes</p>
+<h3 id="risco-5-escopo-muito-amplo">Risco 5: Escopo Muito Amplo</h3>
+<p><strong>Probabilidade</strong>: Média<br />
+<strong>Impacto</strong>: Médio<br />
+<strong>Mitigação</strong>: Definir MVP claro, documentar
+funcionalidades futuras</p>
+<hr />
+<h2 id="contribuições-esperadas">12. CONTRIBUIÇÕES ESPERADAS</h2>
+<h3 id="contribuição-científica">12.1 Contribuição Científica</h3>
+<ul>
+<li><strong>Metodologia</strong>: Pipeline completo e reproduzível para
+problemas similares</li>
+<li><strong>Análise</strong>: Insights sobre fatores de risco em
+rodovias brasileiras</li>
+<li><strong>Comparação</strong>: Avaliação empírica de algoritmos de ML
+para o problema</li>
+<li><strong>Documentação</strong>: Registro detalhado de decisões e
+trade-offs</li>
+</ul>
+<h3 id="contribuição-tecnológica">12.2 Contribuição Tecnológica</h3>
+<ul>
+<li><strong>Sistema Funcional</strong>: Software que pode ser adaptado e
+usado</li>
+<li><strong>Código Aberto</strong>: Disponível para comunidade melhorar
+e expandir</li>
+<li><strong>Boas Práticas</strong>: Exemplo de arquitetura modular e
+documentada</li>
+<li><strong>Interface Intuitiva</strong>: Dashboard web acessível para
+não-técnicos</li>
+</ul>
+<h3 id="contribuição-social">12.3 Contribuição Social</h3>
+<ul>
+<li><strong>Potencial de Salvar Vidas</strong>: Resposta mais eficiente
+a acidentes</li>
+<li><strong>Subsídio a Políticas</strong>: Dados para embasar decisões
+governamentais</li>
+<li><strong>Conscientização</strong>: Visualizações que educam sobre
+segurança viária</li>
+<li><strong>Transferência de Conhecimento</strong>: Metodologia
+aplicável a outros contextos</li>
+</ul>
+<h3 id="contribuição-acadêmica">12.4 Contribuição Acadêmica</h3>
+<ul>
+<li><strong>Formação</strong>: Experiência prática completa em ciência
+de dados</li>
+<li><strong>Material Didático</strong>: Código e documentação úteis para
+ensino</li>
+<li><strong>Publicação</strong>: Potencial para artigo em
+conferência</li>
+<li><strong>Referência</strong>: Base para trabalhos futuros na
+instituição</li>
+</ul>
+<hr />
+<h2 id="referências-iniciais">13. REFERÊNCIAS INICIAIS</h2>
+<h3 id="livros">Livros</h3>
+<ol type="1">
+<li><p>GÉRON, A. <strong>Hands-On Machine Learning with Scikit-Learn,
+Keras, and TensorFlow</strong>. 3rd ed. O’Reilly Media, 2022.</p></li>
+<li><p>PROVOST, F.; FAWCETT, T. <strong>Data Science for
+Business</strong>. O’Reilly Media, 2013.</p></li>
+<li><p>JAMES, G. et al. <strong>An Introduction to Statistical
+Learning</strong>. 2nd ed. Springer, 2021.</p></li>
+<li><p>MCKINNEY, W. <strong>Python for Data Analysis</strong>. 3rd
+ed. O’Reilly Media, 2022.</p></li>
+</ol>
+<h3 id="artigos-científicos">Artigos Científicos</h3>
+<ol start="5" type="1">
+<li><p>ABELLÁN, J. et al. A decision tree algorithm for predicting the
+severity of traffic accidents. <strong>European Transport Research
+Review</strong>, v. 5, n. 3, p. 251-260, 2013.</p></li>
+<li><p>KWON, O. et al. A machine-learning-based classifier for
+predicting road traffic accident severity. <strong>The Scientific World
+Journal</strong>, v. 2015, 2015.</p></li>
+<li><p>SANTOS, K. et al. Fatores associados à gravidade de acidentes de
+trânsito envolvendo motociclistas. <strong>Revista Brasileira de
+Epidemiologia</strong>, v. 22, 2019.</p></li>
+<li><p>CHEN, C.; FAN, W. A deep neural network learning algorithm for
+freeway accident severity prediction. <strong>Transportation Research
+Part C</strong>, v. 102, p. 206-220, 2019.</p></li>
+<li><p>CHAWLA, N. et al. SMOTE: Synthetic Minority Over-sampling
+Technique. <strong>Journal of Artificial Intelligence Research</strong>,
+v. 16, p. 321-357, 2002.</p></li>
+<li><p>BREIMAN, L. Random Forests. <strong>Machine Learning</strong>, v.
+45, n. 1, p. 5-32, 2001.</p></li>
+</ol>
+<h3 id="fontes-de-dados">Fontes de Dados</h3>
+<ol start="11" type="1">
+<li><p>POLÍCIA RODOVIÁRIA FEDERAL. <strong>Dados Abertos</strong>.
+Disponível em:
+https://www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos. Acesso
+em: nov. 2025.</p></li>
+<li><p>DEPARTAMENTO NACIONAL DE TRÂNSITO. <strong>Estatísticas de
+Trânsito</strong>. Disponível em:
+https://www.gov.br/infraestrutura/pt-br/assuntos/transito. Acesso em:
+nov. 2025.</p></li>
+</ol>
+<h3 id="documentação-técnica">Documentação Técnica</h3>
+<ol start="13" type="1">
+<li><p>SCIKIT-LEARN DEVELOPERS. <strong>scikit-learn: Machine Learning
+in Python</strong>. Disponível em: https://scikit-learn.org/. Acesso em:
+nov. 2025.</p></li>
+<li><p>PANDAS DEVELOPMENT TEAM. <strong>pandas: Python Data Analysis
+Library</strong>. Disponível em: https://pandas.pydata.org/. Acesso em:
+nov. 2025.</p></li>
+<li><p>STREAMLIT TEAM. <strong>Streamlit Documentation</strong>.
+Disponível em: https://docs.streamlit.io/. Acesso em: nov.
+2025.</p></li>
+</ol>
+<hr />
+<h2 id="assinaturas">14. ASSINATURAS</h2>
+<h3 id="autores">Autores</h3>
+<hr />
+<p>Kokouvi Hola Kanyi<br />
+Aluno</p>
+<hr />
+<p>Mariano Vunge<br />
+Aluno</p>
+<h3 id="orientador-proposto">Orientador Proposto</h3>
+<hr />
+<p>Prof. Anderson (ARA ANDERSON)<br />
+Orientador</p>
+<hr />
+<p><strong>Data</strong>: ____/____/________</p>
+<p><strong>Local</strong>: ___________________________</p>
+<hr />
+<h2 id="anexo-a-estrutura-do-repositório-github">ANEXO A: Estrutura do
+Repositório GitHub</h2>
+<pre><code>projeto_how_final/
+│
+├── README.md                           # Documentação principal
+├── requirements.txt                    # Dependências Python
+├── .gitignore                         # Arquivos ignorados
+│
+├── data/
+│   ├── raw_data/                      # Dados brutos (não versionados)
+│   └── processed/                     # Dados processados
+│       ├── datatran_2021_2025_clean.csv
+│       └── analyse_summary_2021_2025.json
+│
+├── src/
+│   └── traffic_analysis/              # Módulos do sistema
+│       ├── __init__.py
+│       ├── data_loader.py
+│       ├── data_cleaner.py
+│       ├── data_explorer.py
+│       ├── statistical_analyzer.py
+│       ├── visualizer.py
+│       ├── insight_generator.py
+│       ├── ml_classifier.py           # Novo: Classificador ML
+│       └── ml_visualizer.py           # Novo: Visualizações ML
+│
+├── notebooks/
+│   ├── analyse_complete_2021_2025.ipynb
+│   └── ml_accident_severity.ipynb      # Novo: Notebook ML
+│
+├── scripts/
+│   ├── train_model.py                  # Novo: Script de treino
+│   └── test_model.py                   # Novo: Script de teste
+│
+├── models/
+│   └── accident_severity_classifier/   # Novo: Modelo treinado
+│       ├── model.pkl
+│       ├── label_encoders.pkl
+│       ├── target_encoder.pkl
+│       ├── scaler.pkl
+│       └── metadata.pkl
+│
+├── docs/
+│   ├── APRESENTACAO_TECNICA.md         # Novo: Apresentação
+│   ├── GUIA_APRESENTACAO.md            # Novo: Guia
+│   ├── ML_README.md                    # Novo: Doc ML
+│   └── PROPOSTA_MONOGRAFIA.md          # Este documento
+│
+├── streamlit_app_corrected.py          # Aplicação web
+├── quick_start_ml.py                   # Novo: Demo rápida
+│
+└── run_app.sh / run_app.ps1 / run_app.bat  # Scripts de execução</code></pre>
+<hr />
+<h2 id="anexo-b-dados-estatísticos-do-projeto-situação-atual">ANEXO B:
+Dados Estatísticos do Projeto (Situação Atual)</h2>
+<h3 id="dataset">Dataset</h3>
+<ul>
+<li><strong>Total de Acidentes</strong>: 311.029</li>
+<li><strong>Período</strong>: 2021-2025</li>
+<li><strong>Mortes</strong>: 26.039</li>
+<li><strong>Feridos</strong>: 355.066</li>
+<li><strong>Taxa de Mortalidade</strong>: 8.37%</li>
+</ul>
+<h3 id="modelo-atual">Modelo Atual</h3>
+<ul>
+<li><strong>Algoritmo</strong>: Gradient Boosting</li>
+<li><strong>Acurácia</strong>: 78.31%</li>
+<li><strong>Features</strong>: 19 (10 categóricas + 9 numéricas)</li>
+<li><strong>Classes</strong>: 3 (Sem Vítimas, Com Feridos, Com
+Fatais)</li>
+</ul>
+<h3 id="performance-por-classe">Performance por Classe</h3>
+<ul>
+<li><strong>Com Vítimas Feridas</strong>: F1=87.2%, Recall=96.2%</li>
+<li><strong>Sem Vítimas</strong>: F1=36.6%, Recall=25.1%</li>
+<li><strong>Com Vítimas Fatais</strong>: F1=21.8%, Recall=14.1%</li>
+</ul>
+<h3 id="top-5-features-mais-importantes">Top 5 Features Mais
+Importantes</h3>
+<ol type="1">
+<li>tipo_acidente (19.7%)</li>
+<li>km (16.1%)</li>
+<li>causa_acidente (10.9%)</li>
+<li>hora (7.1%)</li>
+<li>uf (6.6%)</li>
+</ol>
+<hr />
+<p><strong>FIM DA PROPOSTA DE MONOGRAFIA</strong></p>
+</body>
+</html>

@@ -1,7 +1,8 @@
 # Fichiers de données CSV (données sensibles)
-*.csv
-data/raw_data/*.csv
-data/processed/*.csv
+# NOTA: Descomente as linhas abaixo se não quiser incluir os CSVs no repositório
+# *.csv
+# data/raw_data/*.csv
+# data/processed/*.csv
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
@@ -104,7 +105,8 @@ ehthumbs.db
 Thumbs.db
 
 # Streamlit
-.streamlit/
+.streamlit/secrets.toml
+# Manter config.toml no repositório para deploy
 
 # Logs
 *.log
@@ -116,15 +118,21 @@ logs/
 temp/
 tmp/
 
+# Documentação e scripts (não subir no git)
+*.md
+*.pdf
+*.sh
+!README.md
+
 # Large data files
 *.parquet
 *.h5
 *.hdf5
 
-# Model files (if any)
-*.pkl
-*.pickle
-*.joblib
+# Model files (if any) - manter modelos treinados no repo
+# *.pkl
+# *.pickle
+# *.joblib
 
 # Output files
 output/
