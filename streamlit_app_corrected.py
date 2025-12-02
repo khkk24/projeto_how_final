@@ -263,10 +263,10 @@ if df_raw is not None and len(df_raw) > 0:
                 cor_col = 'ano' if 'ano' in df_mapa.columns else None
                 dados_hover = ['uf', 'municipio'] if all(col in df_mapa.columns for col in ['uf', 'municipio']) else None
                 
-                fig = px.scatter_map(df_mapa, lat="latitude", lon="longitude",
+                fig = px.scatter_mapbox(df_mapa, lat="latitude", lon="longitude",
                                    color=cor_col, hover_data=dados_hover,
-                                   zoom=4, height=600,
-                                   map_style="open-street-map",
+                                   zoom=3, height=600,
+                                   mapbox_style="open-street-map",
                                    title="Localização dos acidentes")
                 st.plotly_chart(fig, use_container_width=True)
             else:
