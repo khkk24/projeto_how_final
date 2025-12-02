@@ -1,1 +1,1 @@
-# Vazio - forçar uso apenas de pip
+
