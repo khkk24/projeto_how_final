@@ -148,7 +148,7 @@ if df_raw is not None and len(df_raw) > 0:
             fig = px.bar(x=acidentes_por_ano.index, y=acidentes_por_ano.values,
                         labels={'x': 'Ano', 'y': 'Número de Acidentes'},
                         title="Número de acidentes por ano")
-            st.plotly_chart(fig, width="stretch")
+            st.plotly_chart(fig, use_container_width=True)
         
         # Visualização dos dados
         st.subheader("🔍 Amostra dos Dados")
@@ -157,12 +157,12 @@ if df_raw is not None and len(df_raw) > 0:
         for col in df_display.columns:
             if df_display[col].dtype == 'datetime64[ns]' or 'datetime' in str(df_display[col].dtype):
                 df_display[col] = df_display[col].astype(str)
-        st.dataframe(df_display.head(10), width="stretch")
+        st.dataframe(df_display.head(10), use_container_width=True)
         
         # Estatísticas descritivas
         with st.expander("📈 Estatísticas Descritivas Detalhadas"):
             try:
-                st.dataframe(df.select_dtypes(include=[np.number]).describe(), width="stretch")
+                st.dataframe(df.select_dtypes(include=[np.number]).describe(), use_container_width=True)
             except Exception as e:
                 st.write("Erro ao exibir estatísticas:", str(e))
     
@@ -180,7 +180,7 @@ if df_raw is not None and len(df_raw) > 0:
                     acidentes_por_ano = df.groupby('ano').size()
                     fig = px.line(x=acidentes_por_ano.index, y=acidentes_por_ano.values,
                                  markers=True, labels={'x': 'Ano', 'y': 'Número de Acidentes'})
-                    st.plotly_chart(fig, width="stretch")
+                    st.plotly_chart(fig, use_container_width=True)
                 
                 with col2:
                     if 'mortos' in df.columns:
@@ -190,7 +190,7 @@ if df_raw is not None and len(df_raw) > 0:
                                      markers=True, labels={'x': 'Ano', 'y': 'Número de Mortos'},
                                      line_shape='spline')
                         fig.update_traces(line_color='red')
-                        st.plotly_chart(fig, width="stretch")
+                        st.plotly_chart(fig, use_container_width=True)
                 
                 # Evolução mensal
                 if 'data_inversa' in df.columns:
@@ -205,7 +205,7 @@ if df_raw is not None and len(df_raw) > 0:
                     labels_meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun',
                                    'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
                     fig.update_layout(xaxis=dict(tickmode='array', tickvals=list(range(1,13)), ticktext=labels_meses))
-                    st.plotly_chart(fig, width="stretch")
+                    st.plotly_chart(fig, use_container_width=True)
                 
                 # Heatmap dos acidentes por mês e ano
                 if 'data_inversa' in df.columns:
@@ -217,7 +217,7 @@ if df_raw is not None and len(df_raw) > 0:
                                    x=labels_meses,
                                    aspect="auto",
                                    color_continuous_scale="YlOrRd")
-                    st.plotly_chart(fig, width="stretch")
+                    st.plotly_chart(fig, use_container_width=True)
     
     # Aba Análise geográfica
     aba_geo = aba3 if modo_analise == "multi_anos" else aba2
@@ -237,14 +237,14 @@ if df_raw is not None and len(df_raw) > 0:
                            title="Top 10 estados - Acidentes por ano",
                            labels={'uf': 'Estado', 'acidentes': 'Número de Acidentes'})
                 fig.update_layout(xaxis_tickangle=-45)
-                st.plotly_chart(fig, width="stretch")
+                st.plotly_chart(fig, use_container_width=True)
             else:
                 acidentes_por_estado = df['uf'].value_counts().head(10)
                 fig = px.bar(x=acidentes_por_estado.index, y=acidentes_por_estado.values,
                            labels={'x': 'Estado', 'y': 'Número de Acidentes'},
                            title="Top 10 estados com mais acidentes")
                 fig.update_layout(xaxis_tickangle=-45)
-                st.plotly_chart(fig, width="stretch")
+                st.plotly_chart(fig, use_container_width=True)
         
         # Mapa dos acidentes (se coordenadas disponíveis)
         if 'latitude' in df.columns and 'longitude' in df.columns:
@@ -268,7 +268,7 @@ if df_raw is not None and len(df_raw) > 0:
                                    zoom=4, height=600,
                                    map_style="open-street-map",
                                    title="Localização dos acidentes")
-                st.plotly_chart(fig, width="stretch")
+                st.plotly_chart(fig, use_container_width=True)
             else:
                 st.warning("Nenhuma coordenada válida encontrada para exibir o mapa.")
     
@@ -285,7 +285,7 @@ if df_raw is not None and len(df_raw) > 0:
                 top_causas = df['causa_acidente'].value_counts().head(10)
                 fig = px.pie(values=top_causas.values, names=top_causas.index,
                            title="Top 10 causas de acidentes")
-                st.plotly_chart(fig, width="stretch")
+                st.plotly_chart(fig, use_container_width=True)
         
         with col2:
             if 'tipo_acidente' in df.columns:
@@ -294,7 +294,7 @@ if df_raw is not None and len(df_raw) > 0:
                 fig = px.bar(x=top_tipos.values, y=top_tipos.index, orientation='h',
                            labels={'x': 'Número de Acidentes', 'y': 'Tipo de Acidente'},
                            title="Top 10 tipos de acidentes")
-                st.plotly_chart(fig, width="stretch")
+                st.plotly_chart(fig, use_container_width=True)
         
         # Evolução das causas no tempo (para multi-anos)
         if modo_analise == "multi_anos" and 'ano' in df.columns and 'causa_acidente' in df.columns:
@@ -304,7 +304,7 @@ if df_raw is not None and len(df_raw) > 0:
             
             fig = px.line(evolucao_causas, x='ano', y='acidentes', color='causa_acidente',
                          markers=True, title="Evolução das principais causas por ano")
-            st.plotly_chart(fig, width="stretch")
+            st.plotly_chart(fig, use_container_width=True)
     
     # Aba Análises avançadas
     aba_avancada = aba5 if modo_analise == "multi_anos" else aba4
@@ -317,7 +317,7 @@ if df_raw is not None and len(df_raw) > 0:
             contagem_gravidade = df['classificacao_acidente'].value_counts()
             fig = px.pie(values=contagem_gravidade.values, names=contagem_gravidade.index,
                        title="Distribuição dos acidentes por gravidade")
-            st.plotly_chart(fig, width="stretch")
+            st.plotly_chart(fig, use_container_width=True)
         
         # Análise temporal detalhada
         if 'data_inversa' in df.columns:
@@ -332,7 +332,7 @@ if df_raw is not None and len(df_raw) > 0:
                            y=acidentes_dia.values,
                            labels={'x': 'Dia da Semana', 'y': 'Número de Acidentes'},
                            title="Acidentes por dia da semana")
-                st.plotly_chart(fig, width="stretch")
+                st.plotly_chart(fig, use_container_width=True)
             
             with col2:
                 # Distribuição horária
@@ -344,7 +344,7 @@ if df_raw is not None and len(df_raw) > 0:
                                      markers=True,
                                      labels={'x': 'Hora', 'y': 'Número de Acidentes'},
                                      title="Distribuição horária dos acidentes")
-                        st.plotly_chart(fig, width="stretch")
+                        st.plotly_chart(fig, use_container_width=True)
                     except:
                         st.warning("Formato de hora não reconhecido para análise horária")
         
@@ -386,7 +386,7 @@ if df_raw is not None and len(df_raw) > 0:
                         'mes': 'Distribuição por Mês'
                     }
                     fig_temporal.update_layout(title=labels.get(por, f"Distribuição por {por}"))
-                    st.plotly_chart(fig_temporal, width="stretch")
+                    st.plotly_chart(fig_temporal, use_container_width=True)
                 except Exception as e:
                     st.error(f"Erro ao gerar gráfico temporal: {e}")
 
@@ -421,7 +421,7 @@ if df_raw is not None and len(df_raw) > 0:
                                labels=dict(color="Correlação"),
                                color_continuous_scale="RdBu_r",
                                aspect="auto")
-                st.plotly_chart(fig, width="stretch")
+                st.plotly_chart(fig, use_container_width=True)
             else:
                 st.info("Não há variáveis numéricas relevantes suficientes para matriz de correlação")
         else:
